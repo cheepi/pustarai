@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+psycopg2-binary
+scikit-learn
+pandas
+numpy==2.0.2
+scipy
+kagglehub
+python-dotenv
+requests
+redis

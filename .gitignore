@@ -1,0 +1,28 @@
+# Model artifacts
+pustara_models/
+*.pkl
+
+# Logs
+logs/
+
+# Environment files
+.env
+.env.local
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+thumbs.db

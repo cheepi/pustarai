@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Pustara AI adalah recommendation server hybrid untuk ekosistem Pustara." />
+    <meta name="theme-color" content="#0D1829" />
+    <title>Pustara AI | Recommendation Server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-noise"></div>
+    <div class="glow glow-left"></div>
+    <div class="glow glow-right"></div>
+
+    <main class="shell">
+      <header class="topbar glass">
+        <div class="brand">
+          <div class="brand-mark">P</div>
+          <div>
+            <p class="eyebrow">Pustara AI</p>
+            <p class="brand-sub">Hybrid recommendation server</p>
+          </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Navigation">
+          <a href="#signals">Signals</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#api">API</a>
+          <a href="#setup">Setup</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="pill-row">
+            <span class="pill">FastAPI</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Redis</span>
+            <span class="pill">Hybrid ML</span>
+          </div>
+
+          <h1>Recommendation engine yang tenang, premium, dan nyambung ke ekosistem Pustara.</h1>
+          <p class="hero-text">
+            Pustara AI menggabungkan content-based, collaborative, social, trending, dan demographic signals supaya rekomendasi buku tetap relevan tanpa tampilan yang berisik.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#api">Lihat API</a>
+            <a class="btn btn-secondary" href="#setup">Quick start</a>
+          </div>
+
+          <div class="metric-grid">
+            <article class="metric glass">
+              <span class="metric-label">Model signals</span>
+              <strong>5 lapis</strong>
+            </article>
+            <article class="metric glass">
+              <span class="metric-label">Server</span>
+              <strong>FastAPI</strong>
+            </article>
+            <article class="metric glass">
+              <span class="metric-label">Fallback data</span>
+              <strong>CSV + DB</strong>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-panel glass">
+          <div class="panel-head">
+            <span class="panel-chip">Ready for GitHub Pages</span>
+            <span class="panel-state">Static</span>
+          </div>
+
+          <div class="panel-stack">
+            <div class="stack-card">
+              <p>Content</p>
+              <strong>TF-IDF + semantic search</strong>
+            </div>
+            <div class="stack-card">
+              <p>Collaborative</p>
+              <strong>Similar users + feedback loop</strong>
+            </div>
+            <div class="stack-card">
+              <p>Social + Trending</p>
+              <strong>Redis-backed freshness</strong>
+            </div>
+          </div>
+
+          <div class="code-block">
+<pre><code>uvicorn pustarai.fastapi_server:app --host 0.0.0.0 --port 8001 --reload</code></pre>
+          </div>
+        </aside>
+      </section>
+
+      <section id="signals" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Signals</p>
+          <h2>Dirancang untuk kualitas rekomendasi, bukan cuma demo yang cantik.</h2>
+        </div>
+
+        <div class="card-grid">
+          <article class="feature glass">
+            <h3>Content-first retrieval</h3>
+            <p>Model berbasis konten menjaga rekomendasi tetap masuk akal untuk pengguna baru dan query semantik.</p>
+          </article>
+          <article class="feature glass">
+            <h3>Collaborative layer</h3>
+            <p>Riwayat interaksi dan kecenderungan pembaca dipakai buat ngeboost relevansi lintas pengguna.</p>
+          </article>
+          <article class="feature glass">
+            <h3>Freshness signals</h3>
+            <p>Trending, sosial, dan demographic signals bikin hasil rekomendasi terasa hidup dan tidak stale.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section section-wide glass">
+        <div class="section-head compact">
+          <p class="eyebrow">Architecture</p>
+          <h2>Simple flow, clear layers, easy to deploy.</h2>
+        </div>
+
+        <div class="flow">
+          <div class="flow-step">
+            <span>01</span>
+            <strong>Request masuk</strong>
+            <p>Query, user id, atau activity event diterima lewat endpoint FastAPI.</p>
+          </div>
+          <div class="flow-step">
+            <span>02</span>
+            <strong>Signal mixing</strong>
+            <p>Model content, collaborative, dan trending dirangkai jadi satu skor gabungan.</p>
+          </div>
+          <div class="flow-step">
+            <span>03</span>
+            <strong>Result delivery</strong>
+            <p>Daftar rekomendasi dikirim balik dengan metadata yang siap dipakai frontend.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="api" class="section">
+        <div class="section-head">
+          <p class="eyebrow">API</p>
+          <h2>Endpoint inti yang paling penting.</h2>
+        </div>
+
+        <div class="api-grid">
+          <article class="api-card glass"><code>GET /health</code><span>Health check server.</span></article>
+          <article class="api-card glass"><code>GET /search/semantic</code><span>Semantic content search.</span></article>
+          <article class="api-card glass"><code>GET /recommendations/trending</code><span>Trending books.</span></article>
+          <article class="api-card glass"><code>POST /recommendations/chat</code><span>Chat-based recommendation.</span></article>
+          <article class="api-card glass"><code>POST /reindex</code><span>Trigger model rebuild.</span></article>
+          <article class="api-card glass"><code>POST /reload-catalog</code><span>Reload catalog data.</span></article>
+        </div>
+      </section>
+
+      <section id="setup" class="section section-wide glass">
+        <div class="section-head compact">
+          <p class="eyebrow">Setup</p>
+          <h2>Quick start yang relevan buat repo ini.</h2>
+        </div>
+
+        <div class="setup-grid">
+          <div class="setup-card">
+            <p>Install</p>
+            <pre><code>pip install -r requirements.txt</code></pre>
+          </div>
+          <div class="setup-card">
+            <p>Run</p>
+            <pre><code>python rebuild_models.py</code></pre>
+          </div>
+          <div class="setup-card">
+            <p>Serve</p>
+            <pre><code>uvicorn pustarai.fastapi_server:app --reload --port 8001</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Built for the Pustara stack. Visual language follows the existing FE palette: navy, parchment, and gold.</p>
+      </footer>
+    </main>
+  </body>
+</html>
